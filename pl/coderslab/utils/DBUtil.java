@@ -8,9 +8,9 @@ public class DBUtil {
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/programmingSchool" +
+                "jdbc:mysql://localhost:3306/pl.coderslab" +
                         "?useSSL=false&characterEncoding=UTF8",
                 "root",
-                "root");
+                "coderslab");
     }
 }

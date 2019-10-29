@@ -30,4 +30,8 @@ public class UserService {
     public User[] findAll(){
         return userDao.findAll();
     }
+
+    public User[] findAllByGroupId(){
+        return userDao.findAllByGroupId();
+    }
 }
