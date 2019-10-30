@@ -2,19 +2,14 @@ package src.pl.coderslab.controller;
 
 import src.pl.coderslab.entity.User;
 import src.pl.coderslab.service.UserService;
-import src.pl.coderslab.utils.DBUtil;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 
 public class UserController  {
 
 
 
-    private final UserService userService;
+    private   final UserService userService;
 
 
 
@@ -22,16 +17,18 @@ public class UserController  {
         this.userService = userService;
     }
 
-    public  void showMenu(){
+    public static void showMenu(){
         Scanner scan = new Scanner(System.in);
-        displayAllUsers(userService.findAll());
-        scan.nextLine();
+        System.out.println("Wybierz opcje");
         System.out.println("1 : Display all");
         System.out.println("2 : Display one");
         System.out.println("3 : Create user");
         System.out.println("4 : Update user ");
         System.out.println("5 : Delete user ");
         System.out.println("6 : powrót do menu");
+//        createUser(userService.create(user));
+        scan.nextLine();
+
 
     }
 
@@ -42,8 +39,10 @@ public class UserController  {
 
 
 
-    public void displayAllUsers (User[] findAll) {
+    public  void displayAllUsers (User[] findAll , int i) {
+        i=1;
         userService.findAll();
+
 
     }
 
