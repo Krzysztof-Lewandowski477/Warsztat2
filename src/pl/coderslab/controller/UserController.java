@@ -17,7 +17,7 @@ public class UserController  {
         this.userService = userService;
     }
 
-    public static void showMenu(){
+    public  void showMenu(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Wybierz opcje");
         System.out.println("1 : Display all");
@@ -26,8 +26,10 @@ public class UserController  {
         System.out.println("4 : Update user ");
         System.out.println("5 : Delete user ");
         System.out.println("6 : powrót do menu");
-//        createUser(userService.create(user));
+        UserController id = new UserController(userService.readById());
+        displayAllUsers(userService.findAll());
         scan.nextLine();
+        displayOneUser(userService.readById(id));
 
 
     }
@@ -39,8 +41,9 @@ public class UserController  {
 
 
 
-    public  void displayAllUsers (User[] findAll , int i) {
-        i=1;
+
+    public  void displayAllUsers (User[] findAll  ) {
+
         userService.findAll();
 
 
@@ -52,7 +55,7 @@ public class UserController  {
     }
 
     public void createUser(User user){
-
+            int i =1;
          userService.create(user);
          return;
     }
